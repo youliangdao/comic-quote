@@ -34,6 +34,56 @@ const CardGallery = () => {
           src='https://source.unsplash.com/random'
         />
       </GridItem>
+      <GridItem  w='100%'>
+        <Image
+          src='https://source.unsplash.com/random'
+        />
+      </GridItem>
+      <GridItem  w='100%'>
+        <Image
+          src='https://source.unsplash.com/random'
+        />
+      </GridItem>
+      <GridItem  w='100%'>
+        <Image
+          src='https://source.unsplash.com/random'
+        />
+      </GridItem>
+      <GridItem  w='100%'>
+        <Image
+          src='https://source.unsplash.com/random'
+        />
+      </GridItem>
+      <GridItem  w='100%'>
+        <Image
+          src='https://source.unsplash.com/random'
+        />
+      </GridItem>
+      <GridItem  w='100%'>
+        <Image
+          src='https://source.unsplash.com/random'
+        />
+      </GridItem>
+      <GridItem  w='100%'>
+        <Image
+          src='https://source.unsplash.com/random'
+        />
+      </GridItem>
+      <GridItem  w='100%'>
+        <Image
+          src='https://source.unsplash.com/random'
+        />
+      </GridItem>
+      <GridItem  w='100%'>
+        <Image
+          src='https://source.unsplash.com/random'
+        />
+      </GridItem>
+      <GridItem  w='100%'>
+        <Image
+          src='https://source.unsplash.com/random'
+        />
+      </GridItem>
     </Grid>
   )
 }

@@ -1,24 +1,38 @@
-import { SunIcon } from '@chakra-ui/icons';
-import { Box, Center, Flex, HStack, IconButton, Spacer, Text, useColorMode } from '@chakra-ui/react'
-import React from 'react'
-import { FaMoon, FaSun } from 'react-icons/fa'
+import {
+  Box,
+  Flex,
+  Button,
+  useColorModeValue,
+  useColorMode,
+  Heading,
+} from '@chakra-ui/react';
+import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
-const Header = () => {
+
+const  Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
-      <HStack mx={10}>
-        <Center>
-          <Text fontSize='3xl'>Comic Quote</Text>
-        </Center>
-        <Spacer />
-        <IconButton
-          mb={10}
-          aria-label="DarkMode Switch"
-          icon={colorMode === 'light' ? <FaMoon /> : <SunIcon />}
-          onClick={toggleColorMode}
-          />
-      </HStack>
-  )
+    <>
+      <Box
+        bg={useColorModeValue('gray.100', 'gray.700')}
+        px={4}
+        position='sticky'
+        top={0}
+        zIndex={"sticky"}
+        mb={10}
+        borderBottom='solid'
+        borderBottomColor={useColorModeValue('blackAlpha.200', 'gray.600')}
+        borderBottomWidth={2}
+      >
+        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+            <Heading margin='0 auto'> ComicQuote</Heading>
+              <Button onClick={toggleColorMode} position={'absolute'} right={5}>
+                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+              </Button>
+        </Flex>
+      </Box>
+    </>
+  );
 }
 
 export default Header
