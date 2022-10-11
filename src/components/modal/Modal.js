@@ -18,6 +18,7 @@ import {
   Stack,
   useColorMode,
 } from '@chakra-ui/react'
+import html2canvas from 'html2canvas';
 import { useState } from "react";
 import QuoteCard from "./QuoteCard";
 
@@ -25,6 +26,19 @@ const ModalQuote = ({isOpen, onClose}) => {
   const { colorMode, toggleColorMode } = useColorMode();
   const [quote, setQuote] = useState('');
   const [cardColor, setCardColor] = useState(colorMode === 'light' ? 'white' : 'gray.900');
+  const getScreenShot = () => {
+    const target = document.getElementById('target-component');
+    html2canvas(target).then(canvas => {
+      canvas.toBlob(blob => {
+        navigator.clipboard.write([
+            new window.ClipboardItem({
+              [blob.type]: blob
+            })
+          ]
+        )
+      })
+    })
+  }
   return (
       <Modal isOpen={isOpen} onClose={onClose} size={'xl'}>
         <ModalOverlay />
@@ -41,7 +55,7 @@ const ModalQuote = ({isOpen, onClose}) => {
                     boxSize='100px'
                     src='https://source.unsplash.com/random'
                   />
-                  <Heading size='sm'>進撃の巨人</Heading>
+                  <Heading size='sm'>スラムダンク</Heading>
                 </HStack>
                 <Box>
                   <Heading size='sm' mb='3'>投稿する名言</Heading>
@@ -99,7 +113,9 @@ const ModalQuote = ({isOpen, onClose}) => {
                       rounded={'full'}
                       _focus={{
                         bg: 'gray.200',
-                      }}>
+                      }}
+                      onClick={getScreenShot}
+                    >
                       Copy
                     </Button>
                     <Button

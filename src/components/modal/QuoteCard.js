@@ -7,7 +7,7 @@ import {
 
 const QuoteCard = ({quote, cardColor}) => {
   return (
-    <Center py={6}>
+    <Center py={6} id='target-component'>
       <Stack
         borderWidth="1px"
         borderRadius="lg"
@@ -33,11 +33,11 @@ const QuoteCard = ({quote, cardColor}) => {
           alignItems="center"
           p={1}
           pt={2}>
-          <Heading fontSize={'2xl'} fontFamily={'body'} mb={16}>
+          <Heading fontSize={'2xl'} color={'black'} fontFamily={'body'} mb={16}>
             {quote}
           </Heading>
           <Text fontWeight={600} color={'gray.500'} size="sm">
-            - 『進撃の巨人』
+            『スラムダンク』
           </Text>
           {/* <Text
             textAlign={'center'}
@@ -49,7 +49,7 @@ const QuoteCard = ({quote, cardColor}) => {
             </Link>
             me in your posts
           </Text> */}
-          <Stack align={'center'} justify={'center'} direction={'row'} mt={6}>
+          {/* <Stack align={'center'} justify={'center'} direction={'row'} mt={6}> */}
             {/* <Badge
               px={2}
               py={1}
@@ -71,7 +71,7 @@ const QuoteCard = ({quote, cardColor}) => {
               fontWeight={'400'}>
               #music
             </Badge> */}
-          </Stack>
+          {/* </Stack> */}
         </Stack>
       </Stack>
     </Center>
