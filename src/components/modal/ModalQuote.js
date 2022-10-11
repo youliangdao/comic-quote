@@ -18,14 +18,17 @@ import {
   Stack,
   useColorMode,
   Link,
+  useToast,
+  Text
 } from '@chakra-ui/react'
 import html2canvas from 'html2canvas';
 import { FaTwitter } from "react-icons/fa";
+import { FiCopy } from "react-icons/fi";
 import QuoteCard from "./QuoteCard";
 
 const ModalQuote = ({isOpen, onClose, quote, setQuote, cardColor, setCardColor}) => {
   const { colorMode, toggleColorMode } = useColorMode();
-
+  const toast = useToast();
   const getScreenShot = () => {
     const target = document.getElementById('target-component');
     html2canvas(target).then(canvas => {
@@ -37,6 +40,14 @@ const ModalQuote = ({isOpen, onClose, quote, setQuote, cardColor, setCardColor})
           ]
         )
       })
+    })
+    toast({
+      title: 'コピーしました！',
+      // description: "We've created your account for you.",
+      status: 'success',
+      position: 'top',
+      duration: 9000,
+      isClosable: true,
     })
   }
   return (
@@ -111,12 +122,14 @@ const ModalQuote = ({isOpen, onClose, quote, setQuote, cardColor, setCardColor})
                       flex={1}
                       fontSize={'sm'}
                       rounded={'full'}
-                      _focus={{
-                        bg: 'gray.200',
-                      }}
                       onClick={getScreenShot}
                     >
-                      Copy
+                      <HStack>
+                        <FiCopy />
+                        <Text>
+                          カードをコピーする
+                        </Text>
+                      </HStack>
                     </Button>
                     <Button
                       flex={1}
