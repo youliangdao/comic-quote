@@ -11,10 +11,13 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
     "framer-motion": "^6.5.1",
+    "html2canvas": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^3.11.0",
     "react-scripts": "5.0.1",
+    "react-share": "^4.4.0",
+    "react-twitter-embed": "^4.0.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
