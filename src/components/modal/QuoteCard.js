@@ -33,7 +33,7 @@ const QuoteCard = ({quote, cardColor}) => {
           alignItems="center"
           p={1}
           pt={2}>
-          <Heading fontSize={'2xl'} color={'black'} fontFamily={'body'} mb={16}>
+          <Heading fontSize={'2xl'} fontFamily={'body'} mb={16}>
             {quote}
           </Heading>
           <Text fontWeight={600} color={'gray.500'} size="sm">

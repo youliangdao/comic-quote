@@ -17,15 +17,15 @@ import {
   Radio,
   Stack,
   useColorMode,
+  Link,
 } from '@chakra-ui/react'
 import html2canvas from 'html2canvas';
-import { useState } from "react";
+import { FaTwitter } from "react-icons/fa";
 import QuoteCard from "./QuoteCard";
 
 const ModalQuote = ({isOpen, onClose, quote, setQuote, cardColor, setCardColor}) => {
   const { colorMode, toggleColorMode } = useColorMode();
-  // const [quote, setQuote] = useState('');
-  // const [cardColor, setCardColor] = useState(colorMode === 'light' ? 'white' : 'gray.900');
+
   const getScreenShot = () => {
     const target = document.getElementById('target-component');
     html2canvas(target).then(canvas => {
@@ -120,6 +120,12 @@ const ModalQuote = ({isOpen, onClose, quote, setQuote, cardColor, setCardColor})
                     </Button>
                     <Button
                       flex={1}
+                      target='_blank'
+                      as='a'
+                      href={`https://twitter.com/share?url=''&hashtags=ComicQuote`}
+                      colorScheme='twitter'
+                      leftIcon={<FaTwitter />}
+                      width='100%'
                       fontSize={'sm'}
                       rounded={'full'}
                       bg={'blue.400'}
@@ -133,7 +139,7 @@ const ModalQuote = ({isOpen, onClose, quote, setQuote, cardColor, setCardColor})
                       _focus={{
                         bg: 'blue.500',
                       }}>
-                      Share
+                      Twitterでシェア
                     </Button>
                   </Stack>
               </VStack>
