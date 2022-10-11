@@ -22,10 +22,10 @@ import html2canvas from 'html2canvas';
 import { useState } from "react";
 import QuoteCard from "./QuoteCard";
 
-const ModalQuote = ({isOpen, onClose}) => {
+const ModalQuote = ({isOpen, onClose, quote, setQuote, cardColor, setCardColor}) => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const [quote, setQuote] = useState('');
-  const [cardColor, setCardColor] = useState(colorMode === 'light' ? 'white' : 'gray.900');
+  // const [quote, setQuote] = useState('');
+  // const [cardColor, setCardColor] = useState(colorMode === 'light' ? 'white' : 'gray.900');
   const getScreenShot = () => {
     const target = document.getElementById('target-component');
     html2canvas(target).then(canvas => {
