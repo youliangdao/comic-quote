@@ -10,9 +10,9 @@ import {
 } from '@chakra-ui/react';
 import { BsChatQuoteFill } from "react-icons/bs";
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
-import logoLight from "../images/logo2.png";
-import logoDark from "../images/logo3.png";
-
+import logoLight from "../images/light-logo.png";
+import logoDark from "../images/dark-logo.png";
+import './Header.css'
 const  Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
@@ -34,11 +34,12 @@ const  Header = () => {
                 {colorMode === 'light' ?
                   <img
                     src={logoLight}
-                    width='400'
+                    className='logo'
                   /> :
                   <img
                     src={logoDark}
                     width='400'
+                    className='logo'
                   />
                 }
                 <BsChatQuoteFill />
