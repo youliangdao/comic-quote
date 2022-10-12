@@ -26,7 +26,7 @@ import { FaTwitter } from "react-icons/fa";
 import { FiCopy } from "react-icons/fi";
 import QuoteCard from "./QuoteCard";
 
-const ModalQuote = ({isOpen, onClose, quote, setQuote, cardColor, setCardColor}) => {
+const ModalQuote = ({isOpen, onClose, quote, setQuote, cardColor, setCardColor, title}) => {
   const { colorMode, toggleColorMode } = useColorMode();
   const toast = useToast();
   const getScreenShot = () => {
@@ -54,7 +54,7 @@ const ModalQuote = ({isOpen, onClose, quote, setQuote, cardColor, setCardColor})
       <Modal isOpen={isOpen} onClose={onClose} size={'xl'}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader margin='0 auto' mb='10'>好きな名言を投稿</ModalHeader>
+          <ModalHeader margin='0 auto' mb='10'>好きなセリフを入力</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
               <VStack
@@ -66,7 +66,7 @@ const ModalQuote = ({isOpen, onClose, quote, setQuote, cardColor, setCardColor})
                     boxSize='100px'
                     src='https://source.unsplash.com/random'
                   />
-                  <Heading size='sm'>スラムダンク</Heading>
+                  <Heading size='sm'>{title}</Heading>
                 </HStack>
                 <Box>
                   <Heading size='sm' mb='3'>投稿する名言</Heading>
@@ -109,7 +109,7 @@ const ModalQuote = ({isOpen, onClose, quote, setQuote, cardColor, setCardColor})
                       >青</Radio>
                     </Stack>
                   </RadioGroup>
-                  <QuoteCard quote={quote} cardColor={cardColor}/>
+                  <QuoteCard quote={quote} cardColor={cardColor} title={title}/>
                 </Box>
                   <Stack
                     width={'100%'}

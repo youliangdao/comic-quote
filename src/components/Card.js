@@ -1,14 +1,17 @@
 import { SearchIcon } from '@chakra-ui/icons';
-import { Center, Container, Input, InputGroup, InputLeftElement, useColorMode, useColorModeValue} from '@chakra-ui/react';
+import { Center, Container, Flex, Input, InputGroup, InputLeftElement, useColorMode, useColorModeValue} from '@chakra-ui/react';
 import React from 'react'
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import CardGallery from './CardGallery';
+import animeApi from "./api/anime";
 
 const Card = () => {
   const inputRef = useRef();
+  const [fetchData, setFetchData] = useState([]);
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(inputRef.current.value)
+    animeApi.getAll(`filter_title=${encodeURIComponent(inputRef.current.value)}`)
+    .then(works => setFetchData(works))
   }
   return (
     <Container maxW='container.lg' >
@@ -20,7 +23,7 @@ const Card = () => {
               children={<SearchIcon />}
             />
             <Input
-              placeholder='検索したい漫画を入力'
+              placeholder='検索したいアニメを入力'
               variant='outline'
               bg={useColorModeValue('white', 'gray.600')}
               size='md'
@@ -31,7 +34,7 @@ const Card = () => {
           </InputGroup>
         </form>
       </Center>
-      <CardGallery />
+      <CardGallery fetchData={fetchData}/>
     </Container>
   )
 }
