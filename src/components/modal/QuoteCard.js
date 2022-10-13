@@ -5,7 +5,7 @@ import {
   Center,
 } from '@chakra-ui/react'
 
-const QuoteCard = ({quote, cardColor}) => {
+const QuoteCard = ({quote, cardColor, title}) => {
   return (
     <Center py={6} id='target-component'>
       <Stack
@@ -37,7 +37,7 @@ const QuoteCard = ({quote, cardColor}) => {
             {quote}
           </Heading>
           <Text fontWeight={600} color={'gray.500'} size="sm">
-            『スラムダンク』
+            {`『${title}』`}
           </Text>
           {/* <Text
             textAlign={'center'}
