@@ -26,7 +26,7 @@ import { FaTwitter } from "react-icons/fa";
 import { FiCopy } from "react-icons/fi";
 import QuoteCard from "./QuoteCard";
 
-const ModalQuote = ({isOpen, onClose, quote, setQuote, cardColor, setCardColor, title}) => {
+const ModalQuote = ({isOpen, onClose, quote, setQuote, cardColor, setCardColor, title, imageUrl}) => {
   const { colorMode, toggleColorMode } = useColorMode();
   const toast = useToast();
   const getScreenShot = () => {
@@ -64,7 +64,7 @@ const ModalQuote = ({isOpen, onClose, quote, setQuote, cardColor, setCardColor, 
                 <HStack spacing={5}>
                   <Image
                     boxSize='100px'
-                    src='https://source.unsplash.com/random'
+                    src={imageUrl}
                   />
                   <Heading size='sm'>{title}</Heading>
                 </HStack>
@@ -92,21 +92,26 @@ const ModalQuote = ({isOpen, onClose, quote, setQuote, cardColor, setCardColor, 
                           onChange={e => setCardColor(e.target.value)}
                         >黒</Radio>
                       }
+                        <Radio
+                          value={colorMode  === 'light' ? 'blue.200' : 'blue.700'}
+                          checked={cardColor === (colorMode === 'light' ? 'blue.200' : 'blue.700')}
+                          onChange={e => setCardColor(e.target.value)}
+                        >青</Radio>
+                        <Radio
+                          value={colorMode  === 'light' ? 'red.200' : 'red.700'}
+                          checked={cardColor === (colorMode === 'light' ? 'red.200' : 'red.700')}
+                          onChange={e => setCardColor(e.target.value)}
+                        >赤</Radio>
                       <Radio
-                        value='yellow.200'
-                        checked={cardColor === 'yellow.200'}
+                        value={colorMode  === 'light' ? 'yellow.200' : 'yellow.700'}
+                        checked={cardColor === (colorMode === 'light' ? 'yellow.200' : 'yellow.700')}
                         onChange={e => setCardColor(e.target.value)}
                       >黄</Radio>
                       <Radio
-                        value='green.200'
-                        checked={cardColor === 'green.200'}
+                        value={colorMode  === 'light' ? 'green.200' : 'green.700'}
+                        checked={cardColor === (colorMode === 'light' ? 'green.200' : 'green.700')}
                         onChange={e => setCardColor(e.target.value)}
                       >緑</Radio>
-                      <Radio
-                        value='blue.200'
-                        checked={cardColor === 'blue.200'}
-                        onChange={e => setCardColor(e.target.value)}
-                      >青</Radio>
                     </Stack>
                   </RadioGroup>
                   <QuoteCard quote={quote} cardColor={cardColor} title={title}/>
