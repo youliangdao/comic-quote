@@ -140,7 +140,7 @@ const ModalQuote = ({isOpen, onClose, quote, setQuote, cardColor, setCardColor, 
                       flex={1}
                       target='_blank'
                       as='a'
-                      href={`https://twitter.com/share?url=''&hashtags=ComicQuote`}
+                      href={`https://twitter.com/share?hashtags=ComicQuote&url=https://comic-quote.web.app/`}
                       colorScheme='twitter'
                       leftIcon={<FaTwitter />}
                       width='100%'
