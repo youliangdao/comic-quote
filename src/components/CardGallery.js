@@ -55,6 +55,7 @@ const CardGallery = ({fetchData}) => {
         cardColor={cardColor}
         setCardColor={setCardColor}
         title={title}
+        setTitle={setTitle}
         imageUrl = {smallImageUrl}
       />
     </>

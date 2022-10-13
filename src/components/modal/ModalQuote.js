@@ -19,14 +19,15 @@ import {
   useColorMode,
   Link,
   useToast,
-  Text
+  Text,
+  Input
 } from '@chakra-ui/react'
 import html2canvas from 'html2canvas';
 import { FaTwitter } from "react-icons/fa";
 import { FiCopy } from "react-icons/fi";
 import QuoteCard from "./QuoteCard";
 
-const ModalQuote = ({isOpen, onClose, quote, setQuote, cardColor, setCardColor, title, imageUrl}) => {
+const ModalQuote = ({isOpen, onClose, quote, setQuote, cardColor, setCardColor, title, setTitle, imageUrl}) => {
   const { colorMode, toggleColorMode } = useColorMode();
   const toast = useToast();
   const getScreenShot = () => {
@@ -66,7 +67,11 @@ const ModalQuote = ({isOpen, onClose, quote, setQuote, cardColor, setCardColor, 
                     boxSize='100px'
                     src={imageUrl}
                   />
-                  <Heading size='sm'>{title}</Heading>
+                  <Input
+                    placeholder='タイトルを入力してください'
+                    value={title}
+                    onChange={e => setTitle(e.target.value)}
+                  />
                 </HStack>
                 <Box>
                   <Heading size='sm' mb='3'>投稿する名言</Heading>
