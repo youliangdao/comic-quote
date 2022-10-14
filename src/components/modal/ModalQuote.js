@@ -17,7 +17,6 @@ import {
   Radio,
   Stack,
   useColorMode,
-  Link,
   useToast,
   Text,
   Input
@@ -44,7 +43,6 @@ const ModalQuote = ({isOpen, onClose, quote, setQuote, cardColor, setCardColor, 
     })
     toast({
       title: 'コピーしました！',
-      // description: "We've created your account for you.",
       status: 'success',
       position: 'top',
       duration: 9000,
@@ -145,7 +143,8 @@ const ModalQuote = ({isOpen, onClose, quote, setQuote, cardColor, setCardColor, 
                       flex={1}
                       target='_blank'
                       as='a'
-                      href={`https://twitter.com/share?hashtags=ComicQuote&url=https://comic-quote.web.app/`}
+                      href={`https://twitter.com/share?hashtags=ComicQuote`}
+                      rel='noreferrer'
                       colorScheme='twitter'
                       leftIcon={<FaTwitter />}
                       width='100%'

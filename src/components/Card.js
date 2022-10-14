@@ -31,6 +31,7 @@ const Card = () => {
     if (inputRef.current.value) {
       comicApi.getAll(`keyword=${encodeURIComponent(inputRef.current.value)}`)
       .then(({items, count, page, pageCount}) => {
+        setButtonFlag(false)
         setFetchData(items);
         setItemCount(count);
         setPage(page);

@@ -18,7 +18,7 @@ const  Header = () => {
   return (
     <>
       <Box
-        bg={useColorModeValue('gray.100', 'gray.700')}
+        bg={useColorModeValue('cyan.50', 'gray.700')}
         px={4}
         position='sticky'
         top={0}

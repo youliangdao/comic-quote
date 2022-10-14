@@ -9,7 +9,6 @@ import {
 import React, {useState} from 'react'
 import { v4 as uuidv4 } from "uuid";
 import ModalQuote from "./modal/ModalQuote";
-import NotFound from "../images/image-not-found.png";
 
 const CardGallery = ({fetchData}) => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -41,11 +40,6 @@ const CardGallery = ({fetchData}) => {
             </GridItem>
           )
         })}
-        {/* <GridItem  w='100%' onClick={clickHandler} cursor='pointer'>
-          <Image
-            src='https://source.unsplash.com/random'
-          />
-        </GridItem> */}
       </Grid>
       <ModalQuote
         isOpen={isOpen}

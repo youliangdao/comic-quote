@@ -12,7 +12,7 @@ import Footer from "./Footer";
 const Application = () => {
   return (
     <Box background={useColorModeValue('gray.100', 'gray.600')}>
-      <Grid minH='100vh' templateRows='auto 1fr auto' bg={useColorModeValue('gray.100', 'gray.700')}>
+      <Grid minH='100vh' templateRows='auto 1fr auto' bg={useColorModeValue('cyan.50', 'gray.700')}>
         <Header/>
         <Card />
         <Footer />
